@@ -1,2 +1,4 @@
 import controller as c
-c.start()
+
+while True:
+    c.start()

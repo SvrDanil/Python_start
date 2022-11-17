@@ -7,6 +7,11 @@ def create_database():
     
 
 def del_row(number):
+    try:
+        f = open('data.csv')
+        f.close()
+    except FileNotFoundError:
+        print('Файл не существует!')
     with open("data.csv", "r") as file:
         lines = file.readlines()
     del lines[number *2 ]
@@ -16,6 +21,11 @@ def del_row(number):
     
 
 def add_row(id,name,surname,birthdate,phone_number):
+    try:
+        f = open('data.csv')
+        f.close()
+    except FileNotFoundError:
+        print('Файл не существует!')
     with open("data.csv", "a") as file:
         writer = csv.writer(file,delimiter = " " )
         writer.writerow([id, name, surname, birthdate, phone_number])
